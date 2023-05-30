@@ -16,7 +16,22 @@ def main():
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-    pass
+
+    with open('referat.txt', 'r', encoding='utf-8') as my_file:
+        content = my_file.read()
+        print(f'Длина строки: {len(content)}')
+
+        num_word = content.split()
+        print(f'Количество слов: метод split {len(num_word)}')
+
+        count_word = content.count(" ") + 1
+        print(f'Количество слов: метод cound {count_word}')
+
+        swap = content.replace('.', '!')
+        print(swap)
+
+    with open('referat2.txt', 'w', encoding='utf-8') as write_swap:
+        write_swap.write(swap)
 
 if __name__ == "__main__":
     main()
