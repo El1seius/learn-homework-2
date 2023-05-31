@@ -19,9 +19,15 @@ def print_days():
     dt_now = datetime.now()
     delta_1 = timedelta(days=1)
     yesterday = dt_now - delta_1
+    yesterday = yesterday.strftime('%d-%b-%Y')
     delta_30 = timedelta(days=30)
     ago_30_days = dt_now - delta_30
-    print(f'Вчера: {yesterday}\nСегодня: {dt_now}\n30 дней назад: {ago_30_days}')
+    ago_30_days = ago_30_days.strftime('%d/%m/%Y')
+    dt_now = dt_now.strftime('%d--%B--%Y')
+
+    print(f'Вчера: {yesterday}')
+    print(f'Сегодня: {dt_now}')
+    print(f'30 дней назад: {ago_30_days}')
 
 
 def str_2_datetime(date_string):
@@ -29,9 +35,10 @@ def str_2_datetime(date_string):
     Эта функция вызывается автоматически при запуске скрипта в консоли
     В ней надо заменить pass на ваш код
     """
-#    imp_str =  "01/01/25 12:10:03.234567"
-    dt_imp_str = datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
-    return dt_imp_str
+
+    dt_import_str = datetime.strptime(date_string, '%d/%m/%y %H:%M:%S.%f')
+    return dt_import_str
+
 
 if __name__ == "__main__":
     print_days()

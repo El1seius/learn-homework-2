@@ -18,20 +18,18 @@ def main():
     """
 
     with open('referat.txt', 'r', encoding='utf-8') as my_file:
+    
         content = my_file.read()
-        print(f'Длина строки: {len(content)}')
 
-        num_word = content.split()
-        print(f'Количество слов: метод split {len(num_word)}')
+    print(f'Длина строки: {len(content)}')
 
-        count_word = content.count(" ") + 1
-        print(f'Количество слов: метод cound {count_word}')
+    num_word = content.split()
+    print(f'Количество слов: метод split {len(num_word)}')
 
-        swap = content.replace('.', '!')
-        print(swap)
+    change_symbol = content.replace('.', '!')
 
-    with open('referat2.txt', 'w', encoding='utf-8') as write_swap:
-        write_swap.write(swap)
+    with open('referat2.txt', 'w', encoding='utf-8') as my_write:
+        my_write.write(change_symbol)
 
 if __name__ == "__main__":
     main()
